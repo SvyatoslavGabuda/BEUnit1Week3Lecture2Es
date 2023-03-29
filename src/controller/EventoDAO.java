@@ -19,15 +19,15 @@ public class EventoDAO {
 		// TODO Auto-generated method stub
 		Evento primo = new Evento("primoEv", LocalDate.of(2022, 1, 1), "breve descrione evento", TipoEvento.PUBBLICO, 100);
 		Evento sec = new Evento("SecEv", LocalDate.of(2023, 2,4), "breve descrione evento 2", TipoEvento.PUBBLICO, 1000);
-		Evento ter = new Evento("terEv", LocalDate.of(2024, 5, 5), "breve descrione evento 3", TipoEvento.PRIVATO, 10);
+		Evento ter = new Evento("quarto", LocalDate.of(2024, 5, 5), "breve descrione evento 3", TipoEvento.PRIVATO, 10);
 	
 		try {
 			//save(primo);
 			//save(sec);
 			//save(ter);
-			getById(1l);
-			//delete(sec);
-			refresh(sec);
+			Evento evLetto = getById(4l);
+			//delete(evLetto);
+			refresh(evLetto);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
