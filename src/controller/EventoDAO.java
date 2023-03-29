@@ -18,8 +18,23 @@ public class EventoDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Evento primo = new Evento("primoEv", LocalDate.of(2022, 1, 1), "breve descrione evento", TipoEvento.PUBBLICO, 100);
-		//save(primo);
-		getById(1l);
+		Evento sec = new Evento("SecEv", LocalDate.of(2023, 2,4), "breve descrione evento 2", TipoEvento.PUBBLICO, 1000);
+		Evento ter = new Evento("terEv", LocalDate.of(2024, 5, 5), "breve descrione evento 3", TipoEvento.PRIVATO, 10);
+	
+		try {
+			//save(primo);
+			//save(sec);
+			//save(ter);
+			getById(1l);
+			//delete(sec);
+			refresh(sec);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			em.close();
+			emf.close();
+		}
 
 	}
 	public static void save(Evento e) {
@@ -41,9 +56,9 @@ public class EventoDAO {
 		em.getTransaction().commit();
 		System.out.println("Evento Rimosso");
 	}
-	public static void refresh() {
+	public static void refresh(Evento e) {
 		em.getTransaction().begin();
-		em.refresh(em);
+		em.refresh(e);
 		em.getTransaction().commit();
 		System.out.println("Refresh effettuato");
 	}
