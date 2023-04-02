@@ -20,7 +20,7 @@ import utils.TipoEvento;
 @Setter
 @ToString
 @Entity
-@Table()
+@Table(name = "evento")
 public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
